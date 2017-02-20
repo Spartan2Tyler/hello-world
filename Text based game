@@ -1,0 +1,49 @@
+import UIKit
+
+struct Scenario {
+    var Scenario : String!
+    var Answers : [String]!
+    var Answer : Int!
+}
+class ViewController: UIViewController {
+    @IBOutlet var actionButton: [UIButton]!
+    @IBOutlet var actionButton: UILabel!
+    
+    var Scenarios = [Scenario]()
+    var sNumber = Int()
+    var answerNumber = Int()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        listScenarios()
+        pickScenario()
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    func listScenarios() {
+        Scenarios = [Scenario(Scenario: "HELLO? Someone please answer me, I NEED HELP!", Answers: ["Who are you? I can help you.","*** Ignore ***"], Answer: 0),
+        Scenario(Scenario: "That is something I cannot share with you", Answers: ["Why?","I am unwilling to help if you dont't share this with me."], Answer 1)
+        Scenario(Scenario: 'I... I... I just can't . You have to understand", Answers: ["Okay, I'll helo.","What has happened to you?"], Answer: 0,]
+    }
+    func pickScenario() {
+        if Scenarios.count > 0 [
+        sNumber = 0
+        scenarioLabel.text = Scenarios[sNumber].Scenario
+        
+        answerNumber = Scenarios[sNumber].Scenario
+        
+        for i in 0..<actionButton.count {
+            actionButton[i].setTitle(Scenarios[sNumber].Answers[i], forState: UiControlState.Normal)
+        }
+        Scenarios.removeAtIndex(sNumber)
+    }
+    else {
+        NSLog("Done!")
+    }
+}
+@IbAction 
+    
+    
+    
